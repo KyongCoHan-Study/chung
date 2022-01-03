@@ -1,7 +1,7 @@
 """
 ===============================
 문제출처  : 백준
-문제번호  : 2753
+문제번호  : 2884
 문제레벨  : level_2
 학습주차  : week_1
 최초생성  : 2022.01.04
@@ -10,12 +10,8 @@
 ===============================
 """
 
-A = int(input())
-
-if A%4==0:
-    if A%100!=0 or A%400==0:
-        print(1)
-    else:
-        print(0)
-else:
-    print(0)
+A,B = map(int,input().split())
+time=A*60+B-45
+if time<0:
+    time=time+24*60
+print(str(time//60),str(time%60))
