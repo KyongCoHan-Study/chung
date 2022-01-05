@@ -10,7 +10,12 @@
 ===============================
 """
 
-N = int(input())
+import sys
 
-for i in range(1,10):
-    print(N,"*",i,"=",N*i)
+N,X = map(int,sys.stdin.readline().split())
+n = list(map(int,sys.stdin.readline().split())) 
+for i in range(N):
+    
+    if X>int(n[i]):
+        print(n[i],end=" ")
+    
