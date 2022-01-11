@@ -1,6 +1,24 @@
-def solution(array, commands):
-    answer = []
-    for i in range(len(commands)):
-        answer.append(sorted(list(array[int(commands[i][0])-1:int(commands[i][1])]))[commands[i][2]-1])
-    return answer
-print(solution([1, 5, 2, 6, 3, 7, 4],[[2, 5, 3], [4, 4, 1], [1, 7, 3]]))
+"""
+===============================
+문제출처  : 백준
+문제번호  : 8958
+문제단계  : level_5
+최초생성  : 2022.01.11
+생성자    : chung
+문제설명  : array
+===============================
+"""
+
+import sys
+
+N = int(sys.stdin.readline().rstrip())
+for i in range(N):
+    sum, count =0,0
+    ox = sys.stdin.readline().rstrip()
+    for j in ox:
+        if j=="O":
+            count+=1
+            sum+=count
+        else:
+            count=0
+    print(sum)
