@@ -15,16 +15,32 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"Print Info": {
+	"Print_100_Info": {
 		"scope": "python",
-		"prefix": "qwer",
+		"prefix": "qwe",
 		"body": [
 			"$BLOCK_COMMENT_START",
 			"===============================",
-			"문제출처  : 백준",
+			"문제출처  : ${TM_DIRECTORY/^.+\\\\((.*)+\\\\(.*)+)$/$2/}",
 			"문제번호  : $TM_FILENAME_BASE",
-			"문제레벨  : ${TM_DIRECTORY/^.+\\\\(.*)$/$1/}",
-			"학습주차  : ${TM_DIRECTORY/^.+\\\\((.*)+\\\\(.*)+)$/$2/}",
+			"문제단계  : ${TM_DIRECTORY/^.+\\\\(.*)$/$1/}",
+			"최초생성  : $CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE",
+			"생성자    : $WORKSPACE_NAME",
+			"문제설명  : $1",
+			"===============================",
+			"$BLOCK_COMMENT_END"
+		],
+		"description": "문제 파일 기본 정보"
+	},
+	"Print_Info": {
+		"scope": "python",
+		"prefix": "asd",
+		"body": [
+			"$BLOCK_COMMENT_START",
+			"===============================",
+			"문제출처  : ${TM_DIRECTORY/^.+\\\\((.*)+\\\\(.*)+)$/$2/}",
+			"문제번호  : $TM_FILENAME_BASE",
+			"문제단계  : ${TM_DIRECTORY/^.+\\\\(.*)$/$1/}",
 			"최초생성  : $CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE",
 			"생성자    : $WORKSPACE_NAME",
 			"문제설명  : $1",

@@ -20,3 +20,4 @@ for score in num :
     new.append(score/max *100)  
 
 print(sum(new)/n)
+
