@@ -9,22 +9,35 @@
 ===============================
 """
 
-
-n = int(input())
-
-def hanoi(n, rod1, rod3, rod2):
-
-    if n == 1: 
-        print(rod1, rod3)
-
+def hanoi(num, a, b, c):
+    if num == 1:
+        print(a, c)
     else:
-        hanoi(n-1, rod1, rod2, rod3)
+        hanoi(num - 1, a, c, b)
+        print(a, c)
+        hanoi(num - 1, b, a, c)
+        
+N = int(input())
 
-        print(rod1, rod3)
-
-        hanoi(n-1, rod2, rod3, rod1)
-
-if n==1:
-    print(1)
-else: print(n**2-2)
-hanoi(n, 1, 3, 2)
+num = 1
+for _ in range(num-1):
+    num = num+1
+print(num)
+hanoi(num, 1, 2, 3)
+'''
+아래 있는게 목표지점으로 하나 이동하려면 n-1을 보조기둥으로 n을 목표 기둥으로 n-1을 다시 목표로 반복
+hanoi 3 1 2 3
+3 1->3
+    hanoi 2 1 3 2
+        2 1->2
+            hanoi 1 1 2 3
+                1 1->3
+            hanoi 1 3 1 2
+                1 3->2
+    hanoi 2 2 1 3
+        2 2->3
+            hanoi 1 2 3 1
+            1 2->1
+            hanoi 1 1 2 3
+            1 1->3
+'''
