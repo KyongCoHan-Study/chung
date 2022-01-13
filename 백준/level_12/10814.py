@@ -13,5 +13,5 @@ import sys
 
 N = int(sys.stdin.readline())
 xy=[list(sys.stdin.readline().split())for _ in range(N)]
-xy.sort(key=lambda x:inti(x[0]))
+xy.sort(key=lambda x:int(x[0]))
 [print(x[0],x[1]) for x in xy]

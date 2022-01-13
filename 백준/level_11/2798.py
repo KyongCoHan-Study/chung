@@ -24,6 +24,6 @@ for m in L:
             if answer<sum: answer=sum
     L.remove(m)
 
-print(answer)
+print(int(answer))
 
 '''? 왜틀리지'''
