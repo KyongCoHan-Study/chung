@@ -25,5 +25,3 @@ for m in L:
     L.remove(m)
 
 print(int(answer))
-
-'''? 왜틀리지'''
