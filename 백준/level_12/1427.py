@@ -9,4 +9,4 @@
 ===============================
 """
 
-print("".join(sorted(input())))
+print("".join(sorted(input(),reverse=True)))
