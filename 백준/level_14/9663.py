@@ -9,29 +9,29 @@
 ===============================
 """
 
-
-def N_Queen(board,row):
-    global result 
-    if row > len(board):
-        return
-    for i in range(len(board)):
-        if can_Move(i,row):
-            board[i,row] = 1
-            if row==len(board):
-                result+=1
-            N_Queen(board,row+1)
-    return
-
-def can_Move(board,col,row):
-    if col < 0 or row < 0: return True
-    
-    if board[col,row]==1:
-        return False
-    elif can_Move(board,col-1,row-1)==1:
-        return False
-
 result = 0
 N=int(input())
-board=[[0]*N]*N
-N_Queen(board,0)
+board=[0]*N
+
+def search(row):
+    for i in range(row):
+        if abs(board[row]-board[i])==row-i or board[row]==board[i]:
+            return False
+    return True
+
+def N_Queen(row):
+    global result 
+    if row == N:
+        result+=1
+    else:
+        for i in range(N):
+            board[row]=i
+            if search(row):
+                N_Queen(row+1)
+
+
+N_Queen(0)
 print(result)
+
+
+
