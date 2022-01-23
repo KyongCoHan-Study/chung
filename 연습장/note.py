@@ -1,9 +1,10 @@
-def solution(numbers):
-    answer = ''
-    numbers=list(map(str,numbers))
-    print(sorted([num*3 for num in numbers]))
-    answer="".join(sorted(numbers,reverse=True,key=lambda x:x*3))
-    return answer
-
-
-print(solution([3, 30, 34, 5, 9]))
+"""
+===============================
+문제출처  : chung
+문제번호  : note
+문제단계  : 연습장
+최초생성  : 2022.01.23
+생성자    : chung
+문제설명  : asdasd
+===============================
+"""
