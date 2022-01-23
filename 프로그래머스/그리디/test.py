@@ -1,17 +1,18 @@
 """
 ===============================
-문제출처  : chung
-문제번호  : note
-문제단계  : 연습장
+문제출처  : 프로그래머스
+문제번호  : test
+문제단계  : 그리디
 최초생성  : 2022.01.23
 생성자    : chung
-문제설명  : asdasd
+문제설명  : 모의고사
 ===============================
 """
+
 def solution(answers):
     answer = []
     ans_1=[1, 2, 3, 4, 5]*2001
-    ans_2=[2, 1, 2, 3, 2, 4, 2, 5]*126
+    ans_2=[2, 1, 2, 3, 2, 4, 2, 5]*1260
     ans_3=[3, 3, 1, 1, 2, 2, 4, 4, 5, 5]*1001
     cnt=[0,0,0]
     for i, ans in enumerate(answers):
@@ -25,5 +26,3 @@ def solution(answers):
         if j == max(cnt):
             answer.append(i+1)
     return answer
-
-print(solution([1,2,3,4,5]*2000))
