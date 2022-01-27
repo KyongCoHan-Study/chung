@@ -35,5 +35,7 @@ def solution(name):
         print(answer)
         loc=tloc
         new_name[loc]=0
+        
     return answer        
+
 
