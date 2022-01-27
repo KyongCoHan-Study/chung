@@ -24,7 +24,8 @@ def solution(name):
                 cnt_right+=(i+loc)%len(new_name)
                 continue
             cnt_right+=new_name[(i+loc)%len(new_name)]    
-        tloc = loc    
+        tloc = loc   
+         
         for i in range(len(1,new_name)):
             if n == 100:
                 cnt_left+=abs(loc-i)
@@ -34,5 +35,5 @@ def solution(name):
         print(answer)
         loc=tloc
         new_name[loc]=0
-        
-    return answer
+    return answer        
+
