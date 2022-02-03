@@ -8,7 +8,7 @@
 문제설명  : 스택
 ===============================
 """
-
+import sys
 class stack():
     def push(n):
         stack_list.append(n)
@@ -28,8 +28,8 @@ class stack():
         return -1
     
 stack_list=[]   
-for _ in range(int(input())):
-    n = str(input())
+for _ in range(int(sys.stdin.readline())):
+    n = str((sys.stdin.readline().rstrip()))
     if 'push' in n:
         n,m=n.split()
         stack.push(m)
