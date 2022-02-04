@@ -1,11 +1,11 @@
 """
 ===============================
 문제출처  : 백준
-문제번호  : 18258
+문제번호  : 10866
 문제단계  : level_19
-최초생성  : 2022.02.03
+최초생성  : 2022.02.04
 생성자    : chung
-문제설명  : que
+문제설명  : 덱
 ===============================
 """
 
@@ -15,9 +15,13 @@ from collections import deque
 stack_list=deque()   
 for _ in range(int(sys.stdin.readline())):
     n = str((sys.stdin.readline().rstrip()))
-    if 'pop' == n:
+    if 'pop_front' == n:
         if len(stack_list)!=0:
             print(stack_list.popleft()) 
+        else: print(-1) 
+    elif 'pop_back' == n:
+        if len(stack_list)!=0:
+            print(stack_list.pop()) 
         else: print(-1) 
     elif 'size' == n:
         print(len(stack_list))
@@ -35,4 +39,7 @@ for _ in range(int(sys.stdin.readline())):
         else: print(-1)
     else:
         n,m=n.split()
-        stack_list.append(m)
+        if n=='push_front':
+            stack_list.appendleft(m)
+        else:
+            stack_list.append(m)
