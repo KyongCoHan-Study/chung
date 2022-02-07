@@ -10,7 +10,7 @@
 """
 
 N=int(input())
-memo=[0]*N
+memo=[0]*(N+1)
 memo[1:3]=1,2
 
 for i in range(3,N+1):

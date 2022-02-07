@@ -12,7 +12,6 @@
 
 import sys
 
-
 N = int(sys.stdin.readline())
 stair = [int(sys.stdin.readline()) for _ in range(N)]
 result=[0]*302

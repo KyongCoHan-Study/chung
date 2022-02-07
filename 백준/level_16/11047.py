@@ -13,7 +13,8 @@ import sys
 N,K=map(int,sys.stdin.readline().split())
 cash=[int(sys.stdin.readline()) for _ in range(N)]
 cnt=0
-for n in cash.reverse():
+cash.reverse()
+for n in cash:
     while K>= n:
         cnt+=1
         K=K-n
