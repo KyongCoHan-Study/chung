@@ -16,7 +16,6 @@ result=[]
 max=0
 n=int(sys.stdin.readline())
 for i in range(1,n+1):
-    
     m = int(sys.stdin.readline())
     if m < max:
         if stack_list[-1]==m:
