@@ -8,8 +8,8 @@
 문제설명  : 스택
 ===============================
 """
-
-class stack(int):
+import sys
+class stack():
     def push(n):
         stack_list.append(n)
     def pop():
@@ -20,21 +20,24 @@ class stack(int):
         return len(stack_list)
     def empty():
         if len(stack_list)!=0:
-            return 1
-        return 0
+            return 0
+        return 1
     def top():
-        return stack_list[-1]
+        if len(stack_list)!=0:
+            return stack_list[-1]
+        return -1
     
 stack_list=[]   
-for _ in range(int(input())):
-    n = str(input())
+for _ in range(int(sys.stdin.readline())):
+    n = str((sys.stdin.readline().rstrip()))
     if 'push' in n:
-        stack.push(n[-1])
-    elif 'pop' in n:
+        n,m=n.split()
+        stack.push(m)
+    elif 'pop' == n:
         print(stack.pop())
-    elif 'size' in n:
+    elif 'size' == n:
         print(stack.size())
-    elif 'empty' in n:
+    elif 'empty' == n:
         print(stack.empty())
-    elif 'top' in n:
+    elif 'top' == n:
         print(stack.top())

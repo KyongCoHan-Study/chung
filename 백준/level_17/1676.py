@@ -23,7 +23,6 @@ N= int(input())
 cnt=0
 
 for n in reversed(str(fac(N))):
-    print(n)
     if n!='0':
         break
     cnt+=1
