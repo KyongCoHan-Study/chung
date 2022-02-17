@@ -12,12 +12,22 @@
 import sys
 
 def dfs(v):
-    result_dfs.append(v)
-    if list[v]==0:
+    if v in result_dfs:
         return
-    for n in list[v]:
-        dfs(n)
+    else:
+        result_dfs.append(v)
+    while tree[v]:
+        dfs(tree[v].pop())
 
+def bfs(v):
+    if v in result_dfs:
+        return
+    else:
+        result_dfs.append(v)
+    for temp in tree[v]:
+        result_bfs.append(temp)
+    while tree[v]:
+        bfs(tree[v].pop())
 
 N,M,V = map(int, sys.stdin.readline().split())
 tree = [[] for _ in range(N+1)]
@@ -30,4 +40,8 @@ for _ in range(M):
 for i in range(1,N+1):
     tree[i].sort(reverse=True)
 result_dfs=[]
+dfs(V)
+print(result_dfs)
 result_bfs=[]
+bfs(V)
+print(result_bfs)
