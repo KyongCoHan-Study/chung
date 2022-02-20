@@ -20,14 +20,18 @@ def dfs(v):
         dfs(tree[v].pop())
 
 def bfs(v):
-    if v in result_dfs:
+    if v in result_bfs:
         return
-    else:
-        result_dfs.append(v)
-    for temp in tree[v]:
-        result_bfs.append(temp)
-    while tree[v]:
-        bfs(tree[v].pop())
+    temp=[]
+    while cop[v]:
+        bf=cop[v].pop()
+        result_bfs.append(bf)
+        temp.append(bf)
+    while temp:
+        bfs(temp.pop())
+
+
+    
 
 N,M,V = map(int, sys.stdin.readline().split())
 tree = [[] for _ in range(N+1)]
@@ -40,6 +44,7 @@ for _ in range(M):
 for i in range(1,N+1):
     tree[i].sort(reverse=True)
 result_dfs=[]
+cop=tree.copy()
 dfs(V)
 print(result_dfs)
 result_bfs=[]
