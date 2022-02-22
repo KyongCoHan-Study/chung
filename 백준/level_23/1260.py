@@ -10,7 +10,7 @@
 """
 
 import sys
-
+import copy
 def dfs(v):
     if v in result_dfs:
         return
@@ -22,14 +22,16 @@ def dfs(v):
 def bfs(v):
     if v in result_bfs:
         return
+    result_bfs.append(v)
     temp=[]
     while cop[v]:
         bf=cop[v].pop()
-        result_bfs.append(bf)
         temp.append(bf)
+        result_bfs.append(bf)
+    temp.reverse()        
     while temp:
         bfs(temp.pop())
-
+        
 
     
 
@@ -43,10 +45,12 @@ for _ in range(M):
 
 for i in range(1,N+1):
     tree[i].sort(reverse=True)
+cop=copy.deepcopy(tree)
 result_dfs=[]
-cop=tree.copy()
-dfs(V)
-print(result_dfs)
 result_bfs=[]
+
+dfs(V)
 bfs(V)
-print(result_bfs)
+print(" ".join(map(str,result_dfs)))
+
+print(" ".join(map(str,result_bfs)))
