@@ -23,4 +23,3 @@ for i in range(1, A):
 
 result = max(result)
 print(result)
-
