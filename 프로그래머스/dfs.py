@@ -4,10 +4,10 @@ def solution(n, computers):
 
     def dfs(a,b):
         for i in range(n):
-            if computers[b][i] ==1 and b!=i:
+            if computers[b][i] ==1 and b!=i and line[i]==0:
                 line[i]=a
                 dfs(a,i)
-
+        
     for i in range(n):
         if line[i]==0:
             answer=answer+1
@@ -15,4 +15,19 @@ def solution(n, computers):
             
     return answer
 
-solution(3,	[[1, 1, 0], [1, 1, 0], [0, 0, 1]])
+def solution(numbers, target):
+    answer = 0
+    n=len(numbers)
+    def sum(idx,result):
+        if idx==n:
+            if result==target:
+                nonlocal answer 
+                answer+=1
+            return
+        else:
+            sum(idx+1,result+numbers[idx])
+            sum(idx+1,result-numbers[idx])
+        
+                
+    sum(0,0)            
+    return answer
