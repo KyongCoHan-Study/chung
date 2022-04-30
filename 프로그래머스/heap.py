@@ -7,7 +7,7 @@ def solution(jobs):
     time =0
     q=[]
     
-    while jobs:
+    while True:
         for i,val in enumerate(jobs):
             if val[0]<=time:
                 start,end=val
@@ -23,6 +23,7 @@ def solution(jobs):
             time+=1
         if len(q)==len(jobs):
             break
+        
     print(q)
     for i in q:
         answer+=i
