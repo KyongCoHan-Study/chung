@@ -3,7 +3,6 @@ def solution(compressed):
     intstack = []
     strstack = []
     temp=''
-
     for i in range(len(compressed)):
         cnt = 0
 
@@ -13,6 +12,7 @@ def solution(compressed):
                 i+=1
             i-=1
             intstack.append(cnt)
+            print(intstack)
         elif compressed[i] =='(':
             if compressed[i-1] >='0' and compressed[i-1]<='9':
                 strstack.append(compressed[i])
