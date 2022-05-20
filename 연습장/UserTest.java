@@ -25,7 +25,6 @@ public class UserTest {
 	}
 
 
-
 	public static void main(String[] argv) {
 		new UserTest().test();
 	}
