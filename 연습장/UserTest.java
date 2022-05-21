@@ -6,6 +6,7 @@ public class UserTest {
 			super(msg);
 		}
 	}
+	
 	static class Person {
 		private String name;
 		private int age;
